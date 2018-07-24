@@ -1,0 +1,43 @@
+language: cpp
+
+env:
+  global:
+    # Ubuntu version
+    - LINUX_DIST=trusty
+    - DEPS_DIR=${TRAVIS_BUILD_DIR}/deps
+    # Global build options and C++ flags
+    - CXX_FLAGS="-Wall -std=c++11"
+    # Misc
+    - RUN_TESTS=true
+    - COVERAGE=false
+
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+      sudo: required
+      compiler: gcc
+      addons:
+       apt:
+         packages: &precise_latest_boost_packages
+           - git
+           - python-yaml
+           - apt-transport-https
+           - ca-certificates
+           - curl
+           - software-properties-common
+         sources: &precise_latest_boost_sources
+           - ubuntu-toolchain-r-test
+           - llvm-toolchain-precise-3.7
+
+install:
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu (lsb_release -cs) stable"
+  - sudo apt-get update
+  - sudo apt-get install docker-ce
+
+script:
+    ############################################################################
+    # Build main and tests
+    ############################################################################
+     - docker build -t my_dashboard .
