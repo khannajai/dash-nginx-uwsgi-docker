@@ -5,11 +5,6 @@ env:
     # Ubuntu version
     - LINUX_DIST=trusty
     - DEPS_DIR=${TRAVIS_BUILD_DIR}/deps
-    # Global build options and C++ flags
-    - CXX_FLAGS="-Wall -std=c++11"
-    # Misc
-    - RUN_TESTS=true
-    - COVERAGE=false
 
 matrix:
   include:

@@ -1,5 +1,5 @@
-dash==0.21.1  # The core dash backend
-dash-renderer==0.13.0  # The dash front-end
-dash-html-components==0.11.0  # HTML components
-dash-core-components==0.24.0  # Supercharged components
+dash==0.21.1
+dash-renderer==0.13.0
+dash-html-components==0.11.0
+dash-core-components==0.24.0
 plotly

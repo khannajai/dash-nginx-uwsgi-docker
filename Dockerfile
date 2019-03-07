@@ -1,5 +1,5 @@
 FROM tiangolo/uwsgi-nginx-flask:python3.5
-LABEL maintainer="Jai Khanna ext-jai.khanna@here.com"
+LABEL maintainer="Jai Khanna jai41khanna@gmail.com"
 
 COPY requirements.txt /tmp/
 COPY ./app /app
