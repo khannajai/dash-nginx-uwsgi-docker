@@ -1,5 +1,2 @@
-dash==0.21.1
-dash-renderer==0.13.0
-dash-html-components==0.11.0
-dash-core-components==0.24.0
-plotly
+dash==1.0.0
+dash-daq==0.1.0
